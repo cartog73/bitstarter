@@ -3,44 +3,151 @@
   <head>
     <meta charset="utf-8">
     <title>My First Bitstarter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" 
           href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css">
+    <link type="text/css" rel="stylesheet" 
+	  href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.min.css"><!--required for social buttons-->
+    <link type="text/css" rel="stylesheet" 
+	  href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
+    <link type="text/css" rel="stylesheet" 
+	  href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic">
+    <link type="text/css" rel="stylesheet" 
+	  href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700,300italic,400italic,500italic,700italic2C">
     <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
+
+      /*large desktop*/
+      @media (min-width: 980px) {
+        body {
+          padding-top:60px;
+        }
+        .linediv-l {
+        border-right: 1px blue solid;
+        }
+        .linediv-r {
+        border-left: 1px green solid;
+        }
       }
+
+      /*lanadscape phones and down*/
+      @media (max-width: 480px) {
+        .copy {
+          padding:2.5% 10%;
+        }
+        .linediv-l {
+        border-bottom: 1px blue solid;
+        }
+        .linediv-r {
+        border-top: 1px green solid;
+        }
+      }
+
+      /*All form factors*/
+      
+      /*Main body and headings*/
+
+      body {
+        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+        /*padding-top: 20px;
+        padding-bottom: 40px;*/
+      }
+      .heading, .subheading {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      /*
       .container {
         width: 960px;
-      }
+      }*/
       p.lead {
-        padding-top: 15px;
+        padding-top: 1.5%;
+        font-size: 24px;
+        line-height: 30px;
       }
-      .navigation, .pitch, .section1, .section2, .faq, .footer {
+
+      /*Video pitch and Action*/
+      .pitch {
+        padding: 2.5% 0%
+      }
+      .order {
+        padding: 2% 0%
+      }
+      .actions  {
+        background-color: #343434;
+        padding: 3% 0%
+      }
+      /*.navigation, .pitch, .section1, .section2, .faq, .footer {
         padding: 10px 0px 10px 0px;
-      }
-      .video, .thermometer, .order, .social {
-        border: 1px dotted;
+      }*/
+      .video, .thermometer, .order, .social, .statistics {
+        /*border: 1px dotted;*/
         text-align: center;
       }
-      .video {
+      .statistics h3, .statistics p {
+        color: white;
+      }
+
+
+//      .video {
         /* Internal borders have 1px width, thus need to add 4 x 1px to 120px. */
-        height: 124px;
-        line-height: 124px;
-      }
-      .thermometer, .order, .social {
+//        height: 124px;
+//        line-height: 124px;
+//      }
+//      .thermometer, .order, .social {
         /* line-height to vertically center: http://phrogz.net/css/vertical-align/index.html */
-        height: 40px;
-        line-height: 40px;
-      }
-      div.row {
-        border: 1px solid;
-      }
+//        height: 40px;
+//        line-height: 40px;
+//      }
+//      div.row {
+//        border: 1px solid;
+//      }
     </style>
   </head>
   <body>
+    <!-- New header -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container">
+	  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>	   
+	    <a class="brand" href="#">Bitstarter</a>
+	    <div class="">
+	      <ul class="nav">
+		<li><a href="#">Home</a></li>
+		<li><a href="#about">About</a></li>
+		<li><a href="#contact">Contact</a></li>
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	</div>
+      </div>
+    </div>
+<!-- <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar"
+                  data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Bitstarter</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse ->
+        </div>
+      </div>
+    </div>-->
+
     <div class="container">
-      <div class="row navigation">
+
+      <!--Old header
+	  <div class="row navigation">
         <div class="span2 logo">
           Logo
         </div>
@@ -50,7 +157,8 @@
         <div class="span4 about">
           About
         </div>
-      </div>
+      </div>-->
+
       <div class="row heading">
         <div class="span12">
           <h1>Bitstarter Title</h1>
@@ -61,21 +169,46 @@
           <p class="lead">This is my first bitstarter project.</p>
         </div>
       </div>
-      <div class="row pitch">
-        <div class="span6 video">
-          Video
+      <div class="row-fluid pitch">
+        <div class="span5 offset1 video">
+          <img class="img-polaroid" src="http://placehold.it/480x300">
         </div>
-        <div class="span6">
-          <div class="thermometer">
-            Thermometer
+
+	<!-- define 'actions' div to contain statistics, order, and share buttons-->
+	<div class="span5 actions">
+	  <div class="span8 offset2">
+	    <div class="statistics">
+	      <div class="span4">
+		<div class="linediv-l">
+		  <h3>Therm</h3><p>backers</p>
+		</div>
+	      </div>
+	      <div class="span4">
+		<div class="linediv-c">
+		  <h3>$60,000</h3><p>of $45,000</p>
+		</div>
+	      </div>
+	      <div class="span4">
+		<div class="linediv-r">
+		  <h3>10</h3><p>days left</p>
+		</div>
+	      </div>
+            </div>
           </div>
-          <div class="order">
-            Order
-          </div>
-          <div class="social">
-            Social
-          </div>
-        </div>
+	  <div class="span10 offset1">
+	    <div class="thermometer progress active progress-striped">
+	      <div class="bar bar-success" style="width:60%;"></div>
+	      <div class="bar bar-warning" style="width:40%;"></div>
+	    </div>
+	  </div>
+	  <div class="span6 offset3 order">
+	    <button class="btn btn-success btn-large">Preorder</button>
+	  </div>
+	  <div class="span8 offset2 social">
+	    <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
+	    <button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
+	  </div>
+	</div>
       </div>
       <div class="row section1">
         <div class="span12">
